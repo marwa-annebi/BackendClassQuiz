@@ -1,0 +1,57 @@
+Get http://localhost:3000/userDB/61772cf9ed2b05f2ec156355
+
+###
+Get http://localhost:3000/userDB
+###
+POST http://localhost:3000/userDB
+Content-Type: application/json
+
+{
+  "name" : "marwa",
+  "email" : "marwa@gmail.com",
+  "password" : "1234",
+  "age" :"21"
+
+}
+
+####
+DELETE  http://localhost:3000/userDB/617737fb802aeffdc479e823
+
+###
+PATCH http://localhost:3000/userDB/6177387d802aeffdc479e828
+Content-Type: application/json
+
+{
+    "name" : "amina"
+}
+###
+POST  http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "name" : "jfkhV",
+    "email" : "jfkhV@gmail.com",
+    "password" : "jfkhVV",
+    "verifPassword":"jfkhVV",
+    "age" : "25"
+}
+
+####
+POST  http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email" : "jfkhV@gmail.com",
+    "password" : "jfkhVV"
+}
+
+
+
+###
+POST http://localhost:3000/annonce
+Content-Type: application/json
+
+{
+    "titre" : "marwa",
+    "description" : "Qlfkjchbb c Ch hjyd"
+}
