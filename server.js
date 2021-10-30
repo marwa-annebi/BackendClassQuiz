@@ -1,6 +1,9 @@
 const express = require('express')
 const app=express()
 require('dotenv').config();
+const { send } = require("process");
+const { Console } = require("console");
+
 const cors = require('cors');
 //body-parser
 const bodyParser = require('body-parser');
@@ -31,8 +34,11 @@ app.use('/auth',AuthRouter)
 const AnnonceRouter= require('./routes/annonceCrud');
 app.use('/annonce',AnnonceRouter);
 
+const sendMail = require("./routes/mailer");
+app.use('/mailer',sendMail);
 
 
 
 
-app.listen(3000,()=>console.log('Server started'))
+
+app.listen(3000,()=>console.log('Server started ..........'))

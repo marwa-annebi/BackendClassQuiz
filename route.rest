@@ -29,11 +29,11 @@ POST  http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "name" : "jfkhV",
-    "email" : "jfkhV@gmail.com",
-    "password" : "jfkhVV",
-    "verifPassword":"jfkhVV",
-    "age" : "25"
+    "name" : "marwa",
+    "email" : "marwaannebi25@gmail.com",
+    "password" : "456789",
+    "verifPassword":"456789",
+    "age" : "21"
 }
 
 ####
@@ -54,4 +54,12 @@ Content-Type: application/json
 {
     "titre" : "marwa",
     "description" : "Qlfkjchbb c Ch hjyd"
+}
+###
+
+POST http://localhost:3000/mailer
+Content-Type: application/json
+
+{
+    "email" :"marwaannebi25@gmail.com"
 }
