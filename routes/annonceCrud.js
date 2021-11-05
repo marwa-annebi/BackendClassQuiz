@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Annonce = require('../models/annonce')
 //Getting all 
-router.get('/',async(req,res)=>{
+router.get('/Read',async(req,res)=>{
     try{
         const annonces= await Annonce.find()
         res.json(annonces)
@@ -11,16 +11,16 @@ router.get('/',async(req,res)=>{
     }
 })
 //Getting one
-router.get(':/id',getAnnonce,(req,res)=>{
+router.get('/get/:id',getAnnonce,(req,res)=>{
     res.json(res.annonce)
 })
 //creating annonce
-router.post('/',async (req,res)=>{
-    let {titre,description,date}=req.body;
+router.post('/Create',async (req,res)=>{
+    let {titre,description,Date}=req.body;
     const newAnnonce = new Annonce({
             titre : titre,
             description: description,
-            date:date
+            Date:Date
     })
     try{
         await newAnnonce.save()
@@ -31,15 +31,15 @@ router.post('/',async (req,res)=>{
     }
 })
 //update annonce
-router.patch('/:id',getAnnonce,async(req,res)=>{
+router.put('/update/:id',getAnnonce,async(req,res)=>{
     if(req.body.titre != null){
         res.annonce.titre=req.body.titre
     }
     if(req.body.description != null){
         res.annonce.description=req.body.description
     }
-    if(req.body.date != null){
-        res.annonce.date=req.body.date
+    if(req.body.Date != null){
+        res.annonce.Date=req.body.Date
     }
     try{
         const updateAnnonce = await res.annonce.save()
@@ -50,7 +50,7 @@ router.patch('/:id',getAnnonce,async(req,res)=>{
     }
 })
 //delete annonce
-router.delete('/:id',getAnnonce,async(req,res) =>{
+router.delete('/delete/:id',getAnnonce,async(req,res) =>{
     try{
         await res.annonce.remove()
         res.json({message :'deleted annonce'})

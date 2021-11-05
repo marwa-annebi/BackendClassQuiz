@@ -5,8 +5,7 @@ const { registerValidation, loginValidation } = require("./validation");
 const dotenv = require("dotenv");
 const session = require("express-session");
 const jwt = require("jsonwebtoken");
-
-router.post('/register',async(req,res)=>{
+router.post('/Register',async(req,res)=>{
    //lets validate the data before we a user
    const { name,  email, password, verifPassword,age } = req.body;
    const { error } = registerValidation({
@@ -14,8 +13,7 @@ router.post('/register',async(req,res)=>{
      email,
     password,
     verifPassword,
-    age,
-  });
+    age});
   if (error) {
       return res.status(400).json({ message : error.message})
     };
@@ -35,6 +33,7 @@ router.post('/register',async(req,res)=>{
       email: req.body.email,
       password: hashedPassword,
       age:req.body.age,
+      isAdmin : false
     });
 
     console.log(user);

@@ -1,24 +1,24 @@
-Get http://localhost:3000/userDB/61772cf9ed2b05f2ec156355
+Get http://localhost:3000/userDB/6179d12d3cc0760142937c34
 
 ###
-Get http://localhost:3000/userDB
+Get http://localhost:3000/UserDB/users/read
 ###
-POST http://localhost:3000/userDB
+POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name" : "marwa",
-  "email" : "marwa@gmail.com",
-  "password" : "1234",
+  "name" : "dhdffc",
+  "email" : "Ffafga@gmail.com",
+  "password" : "1234589",
   "age" :"21"
 
 }
 
 ####
-DELETE  http://localhost:3000/userDB/617737fb802aeffdc479e823
+DELETE  http://localhost:3000/users/617737fb802aeffdc479e823
 
 ###
-PATCH http://localhost:3000/userDB/6177387d802aeffdc479e828
+PATCH http://localhost:3000/users/6177387d802aeffdc479e828
 Content-Type: application/json
 
 {
@@ -63,3 +63,6 @@ Content-Type: application/json
 {
     "email" :"marwaannebi25@gmail.com"
 }
+
+####
+GET  http://localhost:3000/UserDb/users

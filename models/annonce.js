@@ -9,7 +9,7 @@ var annonceSchema = new mongoose.Schema({
         trim: true,
    
     },
-    Date :{
+    date :{
         type:Date,
         default :Date.now
     }

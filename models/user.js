@@ -21,5 +21,6 @@ var userSchema = new mongoose.Schema({
     isAdmin:{
         type:Boolean 
     },
+    
 }); 
 module.exports =mongoose.model('User',userSchema);
